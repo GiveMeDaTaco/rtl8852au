@@ -1,0 +1,18 @@
+type: image
+name: bazzite-rtl8852au
+description: Bazzite GNOME with Realtek RTL8852AU Wi-Fi support via akmods
+# Make sure this matches the major Fedora stream shipped by your target
+# Bazzite image (e.g. 41 for Fedora 41).  Adjust as needed.
+releasever: 41
+
+modules:
+  # 1) Start from the official Bazzite GNOME base
+  - type: image
+    image: ghcr.io/ublue-os/bazzite:gnome
+
+  # 2) Pull in the akmods bundle we build in this repository
+  - type: akmods
+    # The GitHub Actions workflow in `ublue-os/akmods` publishes container
+    # tags in the form `<registry>/<user>/akmods:<driver>-f<releasever>`.
+    # Replace `<your-user>` accordingly once CI has produced the image.
+    image: ghcr.io/your-user/akmods:rtl8852au-f41
