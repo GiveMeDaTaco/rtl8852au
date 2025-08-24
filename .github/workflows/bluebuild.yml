@@ -1,0 +1,12 @@
+name: Build Bazzite image with rtl8852au driver
+
+on:
+  push:
+    paths:
+      - 'blueprint.yml'
+      - '.github/workflows/bluebuild.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ublue-os/bluebuild/.github/workflows/reusable.yaml@main

@@ -9,7 +9,10 @@
 #
 # Normal rules
 #
+# Ignore all dot files except for the GitHub CI configuration
 .*
+!/.github
+!/.github/**
 *.o
 *.o.*
 *.a

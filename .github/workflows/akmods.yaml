@@ -1,0 +1,14 @@
+  # .github/workflows/akmods.yml
+  name: Build & publish akmods image
+  on:
+    push:
+      paths:
+        - 'akmods/**'
+        - '.github/workflows/akmods.yml'
+    workflow_dispatch:
+
+  jobs:
+    build:
+      uses: ublue-os/akmods/.github/workflows/reusable.yaml@main
+      with:
+        driver_name: rtl8852au
